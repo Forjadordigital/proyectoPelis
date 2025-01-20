@@ -1,6 +1,10 @@
 ---
 import Navbar from '../components/Navbar.astro'
+<<<<<<< HEAD
 import Sleider from '../components/Sleider.astro'
+=======
+import NavFran from '../components/NavFran.astro'
+>>>>>>> f480571d392b55f1db521d2ef22e5d20022998d0
 ---
 
 <!doctype html>
@@ -13,9 +17,26 @@ import Sleider from '../components/Sleider.astro'
 		<title>Web de películas</title>
 	</head>
 	<body>
+<<<<<<< HEAD
 		<Navbar />
 		<slot />
 		<Sleider busqueda="barra"/>
+=======
+		<div id="app" class="relative h-screen">
+			<aside class="[grid-area:aside] bg-lime-400 p-4">
+				Barra Menú
+			</aside>
+			<nav class="[grid-area:nav] bg-blue-500">
+				<NavFran />
+			</nav>
+			<main class="[grid-area:main] bg-[#1f2937] p-4 grid">
+				<slot />
+			</main>
+			<aside class="[grid-area:fav] bg-yellow-300 p-4 ">
+				Barra Rating
+			</aside>
+		</div>
+>>>>>>> f480571d392b55f1db521d2ef22e5d20022998d0
 	</body>
 </html>
 
@@ -24,9 +45,33 @@ import Sleider from '../components/Sleider.astro'
 	body {
 		margin: 0;
 		width: 100%;
-		min-width: 100vw;
+		min-width: 100%;
 		height: 100%;
 		min-height: 100vh;
 	}
 
+<<<<<<< HEAD
+=======
+	#app{
+		display: grid;
+		grid-template-areas: 
+		"aside nav nav"
+		"aside main fav"
+		"aside main fav";
+		grid-template-columns: 350px auto 250px;
+		grid-template-rows: auto;
+	}
+
+	@media (max-width: 700px) {
+        #app {
+        display: grid;
+        grid-template-areas:
+		  "nav nav nav"
+          "aside aside aside"
+          "main main main";
+        grid-template-columns: 150px auto;
+        grid-template-rows: 1fr auto;
+      }
+    }
+>>>>>>> f480571d392b55f1db521d2ef22e5d20022998d0
 </style>
